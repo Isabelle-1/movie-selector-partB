@@ -1,4 +1,5 @@
 package com.example.MovieSelector.entity;
+
 import javax.persistence.Column;
 //the object itself
 //used to map to something that makes sense from the database eg mood.
@@ -15,13 +16,13 @@ public class Movie {
 	// store mood and title
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name="id")
+	@Column(name = "id")
 	private Long id;
-	
-	@Column(name="mood")
+
+	@Column(name = "mood")
 	private String mood;
 
-	@Column(name="title")
+	@Column(name = "title")
 	private String title;
 
 	// constructor

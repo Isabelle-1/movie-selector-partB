@@ -22,8 +22,8 @@ import com.example.MovieSelector.service.MovieService;
 public class MovieController {
 	@Autowired
 	MovieService movieService;
-	 @Autowired
-	 MovieRepository movieRepo;
+	@Autowired
+	MovieRepository movieRepo;
 
 	public MovieController(MovieService movieService) {
 		System.out.println("Movie service");
@@ -33,24 +33,33 @@ public class MovieController {
 	@GetMapping("/greeting")
 	public String greetingForm(Model model) {
 		model.addAttribute("greeting", new Movie());
+		// calls the greeting.html file
 		return "greeting";
 	}
-	
-
 
 	@PostMapping("/greeting")
 	public String greetingSubmit(@ModelAttribute Movie greeting, Model model) {
 		System.out.println("first print");
+		String x = greeting.getId().toString();
+		int numMovies = Integer.valueOf(x);
+		if (numMovies < 0) {
+			numMovies = 0;
+		}
 		model.addAttribute("greeting", greeting);
 		System.out.println("hello world");
 		List movieList = movieRepo.findByMood(greeting.getMood());
 
-	       for (int i = 0; i < movieList.size(); i++) {
-	    	   Movie x = (Movie) movieList.get(i);
-	   		System.out.println(x.getTitle());
-	        }
-	       
-       
+		if (numMovies >= movieList.size()) {
+			model.addAttribute("movies4U", movieList);
+		} else {
+			List<Movie> smallList = movieList.subList(0, numMovies);
+			model.addAttribute("movies4U", smallList);
+		}
+		for (int i = 0; i < movieList.size(); i++) {
+			Movie c = (Movie) movieList.get(i);
+			System.out.println(c.getTitle());
+		}
+		// calls the result.html file
 		return "result";
 
 	}
