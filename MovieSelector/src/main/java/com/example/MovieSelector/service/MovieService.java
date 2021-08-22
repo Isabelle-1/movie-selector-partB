@@ -1,6 +1,7 @@
 package com.example.MovieSelector.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.stereotype.Service;
 
 import com.example.MovieSelector.entity.Movie;
@@ -14,6 +15,7 @@ public class MovieService {
     MovieRepository movieRepository;
 
     public MovieService(MovieRepository movieRepository) {
+    	System.out.println("Movie repo working");
         this.movieRepository = movieRepository;
     }
 
