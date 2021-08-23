@@ -4,7 +4,6 @@ Initial plan
     - Use springInitializr to start up a gradle project
     - Create controller, entity, repository and service packages
     - Create Classes under each package
-    - 
     - Inside each class, use appropriate annotations to begin writing methods
     - Use thymeleaf and html to begin front-end design of the project
     - Use methods to connect h2 database to front-end 
@@ -44,6 +43,8 @@ Implementation plan
     In the controller I made a loop and an if statement which work together to select the movies based on the users input and list them out. At first I used the console to know if the movies in the database were linked and if the for loop and if statment had worked.
     From there I was able to use the result.html file to display the result of the movie list.
     I added css to both greeting.html and result.html to make the webpage more user friendly, but kept it simple for two reasons; The time limit, and the minimalistic design that I was going for.
+
+
 
 
 
