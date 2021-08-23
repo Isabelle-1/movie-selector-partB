@@ -26,7 +26,6 @@ public class MovieController {
 	MovieRepository movieRepo;
 
 	public MovieController(MovieService movieService) {
-		System.out.println("Movie service");
 		this.movieService = movieService;
 	}
 
@@ -39,14 +38,12 @@ public class MovieController {
 
 	@PostMapping("/greeting")
 	public String greetingSubmit(@ModelAttribute Movie greeting, Model model) {
-		System.out.println("first print");
 		String x = greeting.getId().toString();
 		int numMovies = Integer.valueOf(x);
 		if (numMovies < 0) {
 			numMovies = 0;
 		}
 		model.addAttribute("greeting", greeting);
-		System.out.println("hello world");
 		List movieList = movieRepo.findByMood(greeting.getMood());
 
 		if (numMovies >= movieList.size()) {
