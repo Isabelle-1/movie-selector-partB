@@ -34,7 +34,16 @@ List of features
   In addition to these features, the front page will display text that lets the user know where to input their mood and preferred number of movies, as well as letting the user know key words to use, such as "Happy".
 
 Implementation plan
-    I began by setting up a repository on git hub, and 
+    I began by setting up a repository on git hub, and creating the README file for the project.
+    I then started a new project using SpringInitalizr.
+    I downloaded dependencies such as h2 database, thymeleaf and spring web
+    I began by  creating the controller, entity, repository and service packages, and adding classes under each package.
+    I then worked on each class, and added two html files to see how the page would interact.
+    I connected the h2 database to the project and added some begining movies to it.
+    I added an @Query to the repository, which helped select movies from the database.
+    In the controller I made a loop and an if statement which work together to select the movies based on the users input and list them out. At first I used the console to know if the movies in the database were linked and if the for loop and if statment had worked.
+    From there I was able to use the result.html file to display the result of the movie list.
+    I added css to both greeting.html and result.html to make the webpage more user friendly, but kept it simple for two reasons; The time limit, and the minimalistic design that I was going for.
 
 
 
