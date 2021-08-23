@@ -41,7 +41,7 @@ public class Movie {
 	public String toString() {
 		return title;
 	}
-
+//getters and setters
 	public Long getId() {
 		return id;
 	}
